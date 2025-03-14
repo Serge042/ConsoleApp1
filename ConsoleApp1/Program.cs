@@ -1,13 +1,20 @@
 ﻿class MainClass
 {
-    public static void Main(string[] args)
+    static void Echo(string saidworld, int deep)
     {
+        var modif = saidworld;
 
-        string myName;
-        myName = "Serge";
+        if (modif.Length > 2)
+        {
+            modif = modif.Remove(0, 2);
 
-        Console.WriteLine(myName);
+        }
 
-        Console.ReadKey();
+        Console.WriteLine("..." + modif);
+
+        if (deep > 1)
+        {
+            Echo(modif, deep - 1);
+        }
     }
 }
